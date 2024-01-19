@@ -1,11 +1,11 @@
 import style from './imageGalleryItem.module.css';
 
-const imageGalleryItem = () => {
+const ImageGalleryItem = () => {
   return (
-    <li class="gallery-item">
-      <img src="" alt="" />
+    <li class={style.imageGalleryItem}>
+      <img class={style.imageGalleryItemImage} src="" alt="" />
     </li>
   );
 };
 
-export default imageGalleryItem;
+export default ImageGalleryItem;
