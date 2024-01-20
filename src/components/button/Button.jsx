@@ -1,12 +1,10 @@
 import style from './button.module.css';
 
-const Button = () => {
+const Button = ({ onClick, type = 'submit', children }) => {
   return (
-    <div class={style.overlay}>
-      <div className={style.modal}>
-        <img src="" alt="" />
-      </div>
-    </div>
+    <button onClick={onClick} className={style.button} type={type}>
+      {children}
+    </button>
   );
 };
 

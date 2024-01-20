@@ -1,9 +1,11 @@
 import style from './imageGallery.module.css';
 
-const ImageGallery = () => {
+import ImageGalleryItem from 'components/imageGalleryItem/ImageGalleryItem';
+
+const ImageGallery = ({ items, showModal }) => {
   return (
     <ul className={style.imageGallery}>
-      <li>this image</li>
+      <ImageGalleryItem items={items} showModal={showModal} />
     </ul>
   );
 };

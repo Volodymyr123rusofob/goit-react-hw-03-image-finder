@@ -1,18 +1,20 @@
 import axios from 'axios';
-
+const KEY = '40816428-8ff543c0077c3bf6c3247c305';
 const instance = axios.create({
   baseURL: 'https://pixabay.com/api',
-  //   KEY: '40816428-8ff543c0077c3bf6c3247c305',
   params: {
-    key: '40816428-8ff543c0077c3bf6c3247c305',
-    q: 'cat',
-    page: 1,
+    key: `${KEY}`,
+    per_page: 12,
     image_type: 'photo',
     orientation: 'horizontal',
-    per_page: 12,
   },
 });
 
-export const getAllImages = () => {
-  return instance.get('/');
+export const searchImg = (q, page = 1) => {
+  return instance.get('/', {
+    params: {
+      page: `${page}`,
+      q: `${q}`,
+    },
+  });
 };

@@ -1,11 +1,24 @@
 import style from './imageGalleryItem.module.css';
 
-const ImageGalleryItem = () => {
-  return (
-    <li className={style.imageGalleryItem}>
-      <img className={style.imageGalleryItemImage} src="" alt="" />
-    </li>
-  );
+const ImageGalleryItem = ({ items, showModal }) => {
+  const listImg = items.map(img => {
+    const { id, webformatURL, user, largeImageURL } = img;
+
+    return (
+      <li
+        key={id}
+        className={style.imageGalleryItem}
+        onClick={() => showModal({ largeImageURL })}
+      >
+        <img
+          className={style.imageGalleryItemImage}
+          src={webformatURL}
+          alt={user}
+        />
+      </li>
+    );
+  });
+  return listImg;
 };
 
 export default ImageGalleryItem;
